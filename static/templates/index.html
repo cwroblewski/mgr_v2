@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1 style="text-align: center; font-size:45px;">Próby strzelnicze</h1>
+
+    <ul style="font-size: 24px;">
+        {% for proba in proba_strzelnicza %}
+            <li>
+               <a href="{% url 'proba_strzelnicza' proba.sample_id %}", name="s">
+                   Proba {{ proba.sample_id }}: Kaliber: {{ proba.bullet }}, Model broni: {{ proba.weapon }}</a>
+            </li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+
+    <h1 style="text-align: center; font-size: 40px;">Proba {{ proba_strzelnicza.sample_id }}</h1>
+    <h2>Dane</h2>
+    <ol>
+
+        <li>Bron:<div style="font-weight:bold">{{ proba_strzelnicza.weapon }}</div>
+        </li>
+        <li>Więcej informacji o użytym rodzaju broni:
+            <a href="{{ proba_strzelnicza.link }}">
+                <button>Kliknij tutaj</button>
+            </a>
+        </li>
+        <li>Kaliber: <div style="font-weight:bold">{{ proba_strzelnicza.bullet }}</div></li>
+        <li>Więcej informacji o użytym rodzaju kalibra:
+            <a href="{{ proba_strzelnicza.link_caliber }}">
+                <button>Kliknij tutaj</button>
+            </a>
+        </li>
+        <style>
+            div{
+                font-weight: bold;
+        }
+        </style>
+
+
+        <li>Temperatura:<div> {{ proba_strzelnicza.temperature }} stopni Celcjusza</div></li>
+        <li>Warunki atmosferyczne:<div> {{ proba_strzelnicza.atmosferic_conditions }}</div></li>
+        <li>Prędkość wiatru:<div> {{ proba_strzelnicza.wind_speed }} km/h</div></li>
+        <li>Rodzaj zbiornika do którego oddawany jest <div> {{ proba_strzelnicza.material }}</div></li>
+        <li>Podłoże na którym odbywa się próba:<div> {{ proba_strzelnicza.base}}</div></li>
+        <li>Czy doszło do rykoszetu:<div> {% if proba_strzelnicza.ricochet %} Tak  {% else %} Nie {% endif %}</div></li>
+        <li>Czynnik wypełniający pojemnik:<div> {{ proba_strzelnicza.factor }}</div></li>
+        <li>Rodzaj kamery IR:<div> {{ proba_strzelnicza.ir_camera }}</div></li>
+        <li>Rodzaj kamery zwykłej:<div> {{ proba_strzelnicza.camera }}</div></li>
+        <li>Rodzaj kamery szybkiej:<div> {{ proba_strzelnicza.slowmotion_camera }}</div></li>
+
+    </ol>
+
+
+    <img src={{ proba_strzelnicza.photo.url }}>
+
+    <h3>Czynnik wypełniający zbiornik ({{ proba_strzelnicza.material}}): {{ proba_strzelnicza.czynnik }}</h3>
+    <ul>
+        <li>Gestość czynnika:<div> {{ proba_strzelnicza.factor.parameter }} kg/m^3</div></li>
+        <li>Temperatura czynnika:<div> {{proba_strzelnicza.factor.temperature }} stopni Celcjusza</div></li>
+        <li>Wypełnienie ostrzeliwanego pojemnika:<div> {{ proba_strzelnicza.factor.filling }} %</div></li>
+    </ul>
+    <a href="{% url 'index' %}">Wstecz</a>
+{% endblock %}
