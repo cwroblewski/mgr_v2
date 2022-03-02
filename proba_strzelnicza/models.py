@@ -85,7 +85,7 @@ class Shot(models.Model):
     wind_speed = models.IntegerField(verbose_name="predkosc_wiatru", db_column="predkosc_wiatru")
     material = models.ForeignKey(Material, models.DO_NOTHING)
     base = models.ForeignKey(Base, models.DO_NOTHING, db_column="podloze")
-    ricochet = models.ForeignKey(Ricochet, models.DO_NOTHING, db_column="rykoszet")
+    ricochet = models.ForeignKey(Ricochet, models.DO_NOTHING, db_column="rykoszet", null=True, blank=True)
     factor = models.ForeignKey(Factor, models.DO_NOTHING, db_column="czynnik")
     link = models.CharField(max_length=80)
     link_caliber = models.CharField(verbose_name="link kaliber", max_length=80, default="1", db_column="link_kaliber")
