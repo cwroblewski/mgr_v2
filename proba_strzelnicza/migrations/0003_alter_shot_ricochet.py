@@ -9,13 +9,19 @@ from django.db import (
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('proba_strzelnicza', '0002_alter_base_options_alter_bullet_options_and_more'),
+        ("proba_strzelnicza", "0002_alter_base_options_alter_bullet_options_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='shot',
-            name='ricochet',
-            field=models.ForeignKey(blank=True, db_column='rykoszet', null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='proba_strzelnicza.ricochet'),
+            model_name="shot",
+            name="ricochet",
+            field=models.ForeignKey(
+                blank=True,
+                db_column="rykoszet",
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                to="proba_strzelnicza.ricochet",
+            ),
         ),
     ]

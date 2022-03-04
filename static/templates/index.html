@@ -1,15 +1,29 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <h1 style="text-align: center; font-size:45px;">Próby strzelnicze</h1>
 
-    <ul style="font-size: 24px;">
+    <table class="table text-center">
+        <thead class="thead-dark">
+        <tr>
+            <th colspan="12">Próby strzelnicze</th>
+        </tr>
+        <tr>
+            <th scope="col" width="30%">Próba</th>
+            <th scope="col" width="30%">Kaliber</th>
+            <th scope="col" width="30%">Model Broni</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
         {% for proba in proba_strzelnicza %}
-            <li>
-               <a href="{% url 'proba_strzelnicza' proba.sample_id %}", name="s">
-                   Proba {{ proba.sample_id }}: Kaliber: {{ proba.bullet }}, Model broni: {{ proba.weapon }}</a>
-            </li>
-
+            <tr>
+                <td>{{ proba.sample_id }}</td>
+                <td>{{ proba.bullet }}</td>
+                <td>{{ proba.weapon }}</td>
+                <td><a href="{% url 'proba_strzelnicza' proba.sample_id %}" type="button"
+                       class="btn btn-info">Sczegóły</a></td>
+            </tr>
         {% endfor %}
-    </ul>
+        </tbody>
+    </table>
 {% endblock %}

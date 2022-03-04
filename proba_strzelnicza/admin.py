@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from proba_strzelnicza import models
 
 admin.site.register(models.Bullet)

@@ -6,36 +6,39 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('proba_strzelnicza', '0001_initial'),
+        ("proba_strzelnicza", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='base',
-            options={'verbose_name': 'Podłoże', 'verbose_name_plural': 'Podłoża'},
+            name="base",
+            options={"verbose_name": "Podłoże", "verbose_name_plural": "Podłoża"},
         ),
         migrations.AlterModelOptions(
-            name='bullet',
-            options={'verbose_name': 'Pocisk', 'verbose_name_plural': 'Pociski'},
+            name="bullet",
+            options={"verbose_name": "Pocisk", "verbose_name_plural": "Pociski"},
         ),
         migrations.AlterModelOptions(
-            name='factor',
-            options={'verbose_name': 'Czynnik', 'verbose_name_plural': 'Czynniki'},
+            name="factor",
+            options={"verbose_name": "Czynnik", "verbose_name_plural": "Czynniki"},
         ),
         migrations.AlterModelOptions(
-            name='material',
-            options={'verbose_name': 'Materiał', 'verbose_name_plural': 'Materiały'},
+            name="material",
+            options={"verbose_name": "Materiał", "verbose_name_plural": "Materiały"},
         ),
         migrations.AlterModelOptions(
-            name='ricochet',
-            options={'verbose_name': 'Rykoszet', 'verbose_name_plural': 'Rykoszety'},
+            name="ricochet",
+            options={"verbose_name": "Rykoszet", "verbose_name_plural": "Rykoszety"},
         ),
         migrations.AlterModelOptions(
-            name='shot',
-            options={'verbose_name': 'Próba Strzelnicza', 'verbose_name_plural': 'Próby Strzelnicze'},
+            name="shot",
+            options={
+                "verbose_name": "Próba Strzelnicza",
+                "verbose_name_plural": "Próby Strzelnicze",
+            },
         ),
         migrations.AlterModelOptions(
-            name='weapon',
-            options={'verbose_name': 'Bron', 'verbose_name_plural': 'Bronie'},
+            name="weapon",
+            options={"verbose_name": "Bron", "verbose_name_plural": "Bronie"},
         ),
     ]
