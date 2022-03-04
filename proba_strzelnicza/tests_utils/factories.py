@@ -4,15 +4,17 @@ from random import (
 )
 
 import factory
-from factory.django import DjangoModelFactory
 from faker import Faker
 
 faker = Faker()
 
-from proba_strzelnicza.models import Factor
+from proba_strzelnicza.models import (
+    Factor,
+    Material
+)
 
 
-class FactorFactory(DjangoModelFactory):
+class FactorFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Factor
 
@@ -20,3 +22,11 @@ class FactorFactory(DjangoModelFactory):
     parameter = factory.LazyAttribute(lambda _: faker.name())
     temperature = factory.LazyAttribute(lambda _: randint(0, 30))
     filling = factory.LazyAttribute(lambda _: random())
+
+
+class MaterialFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = Material
+
+    material_type = factory.LazyAttribute(lambda _: faker.name())
+    factor = factory.SubFactory(FactorFactory)
