@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "proba_strzelnicza",
+    "django_cleanup.apps.CleanupConfig",
 ]
 
 MIDDLEWARE = [

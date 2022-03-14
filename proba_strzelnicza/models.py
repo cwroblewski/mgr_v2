@@ -90,7 +90,7 @@ class Ricochet(models.Model):
 
 class Shot(models.Model):
     sample_id = models.CharField(
-        verbose_name="id próby", max_length=64, primary_key=True, db_column="id_proby"
+        verbose_name="id próby", max_length=64, db_column="id_proby"
     )
     weapon = models.ForeignKey(
         Weapon, on_delete=models.DO_NOTHING, db_column="id_broni"
